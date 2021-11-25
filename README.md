@@ -15,30 +15,37 @@ Pour utiliser ce projet, vous allez avoir besoin d'ajouter ces variables d'envir
 
 ## Référence de l'API
 
-#### Get all items
+#### Get toutes les alertes
 
 ```http
-  GET /api/alerts
+  GET /api/alert/
 ```
 
-| Parameter | Type     | Description                |
+| Paramètre | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| aucun     | aucun    | Affiche toutes les alertes |
 
-#### Get item
+#### Get une alerte
 
 ```http
-  GET /api/items/${id}
+  GET /api/alert/:id
 ```
 
-| Parameter | Type     | Description                       |
+| Paramètre | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+| `id`      | `integer`| **Requis**. Id de l'alerte        |
 
-#### add(num1, num2)
+#### Post une alerte
 
-Takes two numbers and returns the sum.
+```http
+  POST /api/alert/
+```
 
+| Paramètre           | Type     | Description                                                                |
+| :------------------ | :------- | :------------------------------------------------------------------------- |
+| `titreAlert`        | `String` | **Requis**. Titre de l'alerte                                              |
+| `descriptionAlerte` | `String` | **Requis**. Description de l'alerte, doit faire entre 10 et 255 caractères |
+|
 
 ## Authors
 
