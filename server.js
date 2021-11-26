@@ -6,6 +6,8 @@ const port = process.env.PORT || 3500;
 const connectDB = require("./database");
 const routes = require("./Routes/alertRoute");
 
+app.use(express.urlencoded({extended: true}));
+
 const start = async () => {
 	try {
 		await connectDB();
