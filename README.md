@@ -43,10 +43,10 @@ Pour utiliser ce projet, vous allez avoir besoin d'ajouter ces variables d'envir
 
 | Paramètre               | Type     | Description                                                                |
 | :---------------------- | :------- | :------------------------------------------------------------------------- |
-| `titreAlert`            | `String` | **Requis**. Titre de l'alerte                                              |
+| `titreAlerte`           | `String` | **Requis**. Titre de l'alerte                                              |
 | `descriptionAlerte`     | `String` | **Requis**. Description de l'alerte, doit faire entre 10 et 255 caractères |
-| `dateAlerte`            | `Date`   | **Requis**. Date de l'alerte, YYYY:MM:DD par défault                       |
-| `horaireAlerte`         | `Date`   | **Requis**. Horaire de l'alerte, HH:MM:SS par défault                      |
+| `dateAlerte`            | `Date`   | **Requis**. Date de l'alerte, au format DD:MM:YYYY                         |
+| `horaireAlerte`         | `String` | **Requis**. Horaire de l'alerte, au format HH:MM:SS                        |
 | `adresseAlerte`         | `String` | **Requis**. Adresse de l'alerte                                            |
 | `photoAlerte            | `String` | **Requis**. Photo de l'alerte                                              |
 | `nomUtilisateur`        | `String` | **Requis**. Nom de l'utilisateur, dois faire entre 2 et 20 caractères      |
