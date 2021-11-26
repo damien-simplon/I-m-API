@@ -45,7 +45,7 @@ const alertSchema = new mongoose.Schema({
         required: [true, "Ce champ est requis"]
     },
     codePostalUtilisateur:{
-        type: Number,
+        type: String,
         required: [true, "Ce champ est requis"]
     },
     villeUtilisateur:{
@@ -61,7 +61,7 @@ const alertSchema = new mongoose.Schema({
         required: [true, "Ce champ est requis"]
     },
     telephoneUtilisateur:{
-        type: Number,
+        type: String,
         required: [true, "Ce champ est requis"]
     },
 },
