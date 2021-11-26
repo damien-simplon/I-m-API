@@ -41,11 +41,54 @@ Pour utiliser ce projet, vous allez avoir besoin d'ajouter ces variables d'envir
   POST /api/alert/
 ```
 
-| Paramètre           | Type     | Description                                                                |
-| :------------------ | :------- | :------------------------------------------------------------------------- |
-| `titreAlert`        | `String` | **Requis**. Titre de l'alerte                                              |
-| `descriptionAlerte` | `String` | **Requis**. Description de l'alerte, doit faire entre 10 et 255 caractères |
-|
+| Paramètre               | Type     | Description                                                                |
+| :---------------------- | :------- | :------------------------------------------------------------------------- |
+| `titreAlert`            | `String` | **Requis**. Titre de l'alerte                                              |
+| `descriptionAlerte`     | `String` | **Requis**. Description de l'alerte, doit faire entre 10 et 255 caractères |
+| `dateAlerte`            | `Date`   | **Requis**. Date de l'alerte, YYYY:MM:DD par défault                       |
+| `horaireAlerte`         | `Date`   | **Requis**. Horaire de l'alerte, HH:MM:SS par défault                      |
+| `adresseAlerte`         | `String` | **Requis**. Adresse de l'alerte                                            |
+| `photoAlerte            | `String` | **Requis**. Photo de l'alerte                                              |
+| `nomUtilisateur`        | `String` | **Requis**. Nom de l'utilisateur, dois faire entre 2 et 20 caractères      |
+| `prenomUtilisateur`     | `String` | **Requis**. Prénom de l'utilisateur, dois faire entre 2 et 20 caractères   |
+| `adresseUtilisateur`    | `String` | **Requis**. Adresse de l'utilisateur                                       |
+| `codePostalUtilisateur` | `String` | **Requis**. Code postal de l'utilisateur                                   |
+| `villeUtilisateur`      | `String` | **Requis**. Ville de l'utilisateur                                         |
+| `emailUtilisateur`      | `String` | **Requis**. Email de l'utilisateur                                         |
+| `telephoneUtilisateur`  | `String` | **Requis**. Téléphone de l'utilisateur                                     |
+
+#### Put une alerte
+
+```http
+  PUT /api/alert/:id
+```
+
+| Paramètre               | Type     | Description                                                                |
+| :---------------------- | :------- | :------------------------------------------------------------------------- |
+| `_id`                   | `integer`| **Requis**. Id de l'alerte                                                 |
+| `titreAlert`            | `String` | **Requis**. Titre de l'alerte                                              |
+| `descriptionAlerte`     | `String` | **Requis**. Description de l'alerte, doit faire entre 10 et 255 caractères |
+| `dateAlerte`            | `Date`   | **Requis**. Date de l'alerte, YYYY:MM:DD par défault                       |
+| `horaireAlerte`         | `Date`   | **Requis**. Horaire de l'alerte, HH:MM:SS par défault                      |
+| `adresseAlerte`         | `String` | **Requis**. Adresse de l'alerte                                            |
+| `photoAlerte            | `String` | **Requis**. Photo de l'alerte                                              |
+| `nomUtilisateur`        | `String` | **Requis**. Nom de l'utilisateur, dois faire entre 2 et 20 caractères      |
+| `prenomUtilisateur`     | `String` | **Requis**. Prénom de l'utilisateur, dois faire entre 2 et 20 caractères   |
+| `adresseUtilisateur`    | `String` | **Requis**. Adresse de l'utilisateur                                       |
+| `codePostalUtilisateur` | `String` | **Requis**. Code postal de l'utilisateur                                   |
+| `villeUtilisateur`      | `String` | **Requis**. Ville de l'utilisateur                                         |
+| `emailUtilisateur`      | `String` | **Requis**. Email de l'utilisateur                                         |
+| `telephoneUtilisateur`  | `String` | **Requis**. Téléphone de l'utilisateur                                     |
+
+#### Delete une alerte
+
+```http
+  Delete /api/alert/:id
+```
+
+| Paramètre               | Type     | Description                                                                |
+| :---------------------- | :------- | :------------------------------------------------------------------------- |
+| `_id`                   | `integer`| **Requis**. Id de l'alerte                                                 |
 
 ## Authors
 
