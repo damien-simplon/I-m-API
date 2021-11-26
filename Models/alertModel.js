@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const alertSchema = new mongoose.Schema({
-    titreAlert:{
+    titreAlerte:{
         type: String,
         required: [true,"Ce champ est requis"]
     },
@@ -12,14 +12,12 @@ const alertSchema = new mongoose.Schema({
         maxlength: [255, "La description doit faire maximum 255 caractères"],
         required: [true, "Ce champ est requis"]
     },
-    date:{
-        type: Date,
-        default: (Date.now).getYear + ":" + (Date.now).getMonth + ":" + (Date.now).getDay,
+    dateAlerte:{
+        type: String,
         required: [true, "Ce champ est requis"]
     },
-    horaire:{
-        type: Date,
-        default: (Date.now).getHours + ":" + (Date.now).getMinutes + ":" + (Date.now).getSeconds,
+    horaireAlerte:{
+        type: String,
         required: [true, "Ce champ est requis"]
     },
     adresseAlerte:{
