@@ -14,7 +14,7 @@ Pour utiliser ce projet, vous allez avoir besoin d'ajouter ces variables d'envir
 
 `EMAIL`
 
-`EMAIL_PASSWORD`
+`PASSWORD`
 
 
 ## Référence de l'API
