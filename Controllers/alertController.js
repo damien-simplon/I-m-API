@@ -1,12 +1,13 @@
-const alertModel = require('../models/alertModel');
-const nodemailer = require('nodemailer');
 require('dotenv').config();
+const nodemailer = require('nodemailer');
+const alertModel = require('../models/alertModel');
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
+		type: 'gmail',
 		user: process.env.EMAIL,
-		pass: process.env.EMAIL_PASSWORD,
+		pass: process.env.PASSWORD,
 	},
 });
 
@@ -21,22 +22,23 @@ module.exports = {
 	},
 	postAlert: async (req, res) => {
 		const alert = await alertModel.create(req.body);
-        console.log(req.body.typeAlerte);
-        var mailOptions = {
-            from: process.env.EMAIL,
-            to: process.env.EMAIL,
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!',
-        };
-        transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
-
-		res.status(201).json({ alert });
+		var mail = req.body.titreAlerte + "@simplon.co";
+		console.log(mail);
+		var mailOptions = {
+			from: process.env.EMAIL, 
+			to: mail,
+			subject: req.body.titreAlerte, 
+			text: req.body.descriptionAlerte,  
+		}
+		transporter.sendMail(mailOptions, function(error, response){
+			if(error){
+				 res.send("Email could not sent due to error: "+error);
+				 console.log('Error');
+			}else{
+				 res.status(201).json({ alert });
+				 console.log('mail sent');
+			} 
+		}); 
 	},
 	putAlert: async (req, res) => {
 		const alert = await alertModel.findByIdAndUpdate(req.params.id, req.body);
