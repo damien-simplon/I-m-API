@@ -22,23 +22,23 @@ module.exports = {
 	},
 	postAlert: async (req, res) => {
 		const alert = await alertModel.create(req.body);
-		var mail = req.body.titreAlerte + "@simplon.co";
+		var mail = req.body.titreAlerte + '@simplon.co';
 		console.log(mail);
 		var mailOptions = {
-			from: process.env.EMAIL, 
+			from: process.env.EMAIL,
 			to: mail,
-			subject: req.body.titreAlerte, 
-			text: req.body.descriptionAlerte,  
-		}
-		transporter.sendMail(mailOptions, function(error, response){
-			if(error){
-				 res.send("Email could not sent due to error: "+error);
-				 console.log('Error');
-			}else{
-				 res.status(201).json({ alert });
-				 console.log('mail sent');
-			} 
-		}); 
+			subject: req.body.titreAlerte,
+			text: req.body.descriptionAlerte,
+		};
+		transporter.sendMail(mailOptions, function (error, response) {
+			if (error) {
+				res.send('Email could not sent due to error: ' + error);
+				console.log('Error');
+			} else {
+				res.status(201).json({ alert });
+				console.log('mail sent');
+			}
+		});
 	},
 	putAlert: async (req, res) => {
 		const alert = await alertModel.findByIdAndUpdate(req.params.id, req.body);
