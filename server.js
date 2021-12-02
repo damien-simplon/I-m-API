@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3500;
 const connectDB = require("./database");
-const routes = require("./Routes/alertRoute");
+const alertRoutes = require("./Routes/alertRoute");
+const userRoutes = require("./Routes/userRoute");
 
 app.use(express.urlencoded({extended: true}));
 
@@ -22,4 +23,6 @@ const start = async () => {
 
 start();
 
-app.use("/api/alert/",routes);
+app.use("/api/alert/",alertRoutes);
+
+app.use("/api/user",userRoutes);
