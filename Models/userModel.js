@@ -15,6 +15,10 @@ const userSchema = mongoose.Schema({
         required: [true, "le mot de passe est requis"],
         minlength: [8, "le mot de passe doit contenir au moins 8 caractères"],
         maxlength: [32, "le mot de passe doit contenir au plus 32 caractères"],
+    },
+    role : {
+        type: String,
+        default: 'visiteur'
     }
 },{
     timestamps: true
