@@ -12,7 +12,7 @@ module.exports = {
     },
     postUser: async (req, res) => {
         const { email, password } = req.body;
-        const password = await bcrypt.hash(req.body.password, 10);
+        password = await bcrypt.hash(req.body.password, 10);
         const user = await userModel.create(email,password);
         res.status(200).json({ user });
     },

@@ -13,3 +13,5 @@ route.put('/:id', controller.putUser);
 route.delete('/:id', controller.deleteUser);
 
 route.post('/login', controller.login);
+
+module.exports = route;
