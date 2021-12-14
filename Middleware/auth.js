@@ -1,6 +1,8 @@
+// imports
 const bcrypt = require('bcrypt');
 const userModel = require('../models/user');
 
+// fonction pour la connection
 const auth = (req, res, next) => {
     const email = req.body.email;
     const user = userModel.findOne({ email });
@@ -24,4 +26,6 @@ const auth = (req, res, next) => {
         });
     }
 };
+
+// exportation de l'auth
 module.exports = auth;
