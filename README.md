@@ -94,6 +94,62 @@ Pour utiliser ce projet, vous allez avoir besoin d'ajouter ces variables d'envir
 | :---------------------- | :------- | :------------------------------------------------------------------------- |
 | `_id`                   | `integer`| **Requis**. Id de l'alerte                                                 |
 
+#### Get tout les utilisateurs
+
+```http
+  GET /api/user/
+```
+
+| Paramètre | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| aucun     | aucun    | Affiche toutes les alertes |
+
+#### Get un utilisateur
+
+```http
+  GET /api/user/:id
+```
+
+| Paramètre | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `_id`      | `integer`| **Requis**. Id de l'user          |
+
+#### Post un utilisateur
+
+```http
+  POST /api/user/
+```
+
+| Paramètre               | Type     | Description                                                                                   |
+| :---------------------- | :------- | :-------------------------------------------------------------------------------------------- |
+| `email`                 | `String` | **Requis et unique**. Email de l'user                                                         |
+| `password`              | `String` | **Requis et confidentiel**. Mot de passe de l'utilisateur doit faire entre 8 et 32 caractères |
+| `role`                  | `String` | Rôle de l'utilisateur, par défault : visiteur                                                 |
+
+#### Put un utilisateur
+
+```http
+  PUT /api/user/:id
+```
+
+| Paramètre               | Type     | Description                                                                                   |
+| :---------------------- | :------- | :-------------------------------------------------------------------------------------------- |
+| `_id`                    | `integer`| **Requis**. Id de l'user                                                                      |
+| `email`                 | `String` | **Requis et unique**. Email de l'user                                                         |
+| `password`              | `String` | **Requis et confidentiel**. Mot de passe de l'utilisateur doit faire entre 8 et 32 caractères |
+| `role`                  | `String` | Rôle de l'utilisateur, par défault : visiteur                                                 |
+
+#### Delete un utilisateur
+
+```http
+  Delete /api/user/:id
+```
+
+| Paramètre               | Type     | Description                                                                |
+| :---------------------- | :------- | :------------------------------------------------------------------------- |
+| `_id`                   | `integer`| **Requis**. Id de l'user                                                 |
+
+
 ## Authors
 
 - [@Damien Bellec](https://github.com/damien-simplon)

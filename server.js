@@ -6,9 +6,9 @@ const port = process.env.PORT || 3500;
 const connectDB = require("./database");
 const alertRoutes = require("./Routes/alertRoute");
 const userRoutes = require("./Routes/userRoute");
-
 app.use(express.urlencoded({extended: true}));
 
+// fonction de démarrage de la connection à la base de données
 const start = async () => {
 	try {
 		await connectDB();
@@ -21,8 +21,13 @@ const start = async () => {
 	}
 };
 
+// lancement de la bdd
 start();
 
+// définition des routes
+
+// route pour les alertes
 app.use("/api/alert/",alertRoutes);
 
+// route pour les utilisateurs
 app.use("/api/user",userRoutes);
