@@ -2,6 +2,8 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const alertModel = require('../models/alertModel');
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
 // création du transporteur
 const transporter = nodemailer.createTransport({

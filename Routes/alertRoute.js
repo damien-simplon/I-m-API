@@ -2,6 +2,8 @@
 const alertController = require('../controllers/alertController');
 const express = require('express');
 const route = express.Router();
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 // route pour obtenir toutes les alertes
 route.get('/', alertController.getAllAlert);
@@ -10,7 +12,7 @@ route.get('/', alertController.getAllAlert);
 route.get('/:id', alertController.getAlertById);
 
 // route pour créer une alerte
-route.post('/', alertController.postAlert);
+route.post('/', upload.single('avatar'), alertController.postAlert);
 
 // route pour modifier une alerte
 route.put('/:id', alertController.putAlert);
